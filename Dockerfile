@@ -15,7 +15,7 @@ RUN flutter doctor -v
 COPY . /usr/local/bin/app
 WORKDIR /usr/local/bin/app
 RUN flutter pub get
-RUN flutter build web --web-port=8080
+RUN flutter build web
 
 # Document the exposed port and start serser
 EXPOSE 8080
