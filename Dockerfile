@@ -19,4 +19,4 @@ RUN flutter build web
 
 # Document the exposed port and start serser
 EXPOSE 8080
-ENTRYPOINT [ "/usr/local/bin/app/server/server.sh" ]
+ENTRYPOINT ["chmod", "+x", "/usr/local/bin/app/server/server.sh" ]
