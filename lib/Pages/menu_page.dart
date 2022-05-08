@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 
 class Menu extends StatelessWidget {
@@ -17,7 +18,18 @@ class Menu extends StatelessWidget {
 
             ElevatedButton(
               onPressed: (){
-                Navigator.of(context).pushNamed('/localSetup');
+                Navigator.of(context).pushNamed('/localSetup').then((value) => {
+                  SystemChrome.setApplicationSwitcherDescription(
+                      ApplicationSwitcherDescription(
+                        label: 'Poker App',
+                        primaryColor: Theme
+                            .of(context)
+                            .primaryColor
+                            .value,
+                      )
+                  )
+
+                });
               },
               child: Text("Local Game"),
             ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:poker/Pages/ChipsPage/ChipsTracker/betting_slider.dart';
 import 'package:poker/Pages/ChipsPage/ChipsTracker/actions.dart';
 import 'package:poker/Pages/ChipsPage/ChipsTracker/chips_page_controller.dart';
@@ -39,6 +40,11 @@ class _ChipsPageState extends State<ChipsPage> {
 
   @override
   Widget build(BuildContext context) {
+
+    SystemChrome.setApplicationSwitcherDescription(ApplicationSwitcherDescription(
+      label: 'Poker Chips',
+    ));
+
     //SetupDTO dto = ModalRoute.of(context)!.settings.arguments as SetupDTO;
     ChipsPageController _c = ModalRoute.of(context)!.settings.arguments as ChipsPageController;
     return WillPopScope(

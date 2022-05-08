@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:poker/Pages/ChipsPage/Setup/game_values.dart';
 import 'package:poker/Pages/ChipsPage/Setup/name_list.dart';
 import 'package:poker/Pages/ChipsPage/Setup/setup_controller.dart';
@@ -9,6 +10,11 @@ class SetupPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setApplicationSwitcherDescription(ApplicationSwitcherDescription(
+      label: 'Setup',
+      primaryColor: Theme.of(context).primaryColor.value,
+    ));
+
     return ChangeNotifierProvider(
       create: (context) => SetupController(context: context),
       builder: (context, child) {
